@@ -1,4 +1,3 @@
-import { AUTH_MESSAGES } from "@/src/lib/constants/auth/authMessages";
 import { supabase } from "@/src/lib/services/supabase";
 import type { Session, User } from "@supabase/supabase-js";
 import React, {
@@ -9,6 +8,7 @@ import React, {
   useMemo,
   useState,
 } from "react";
+import { AUTH_MESSAGES } from "../../constants/auth/authMessages";
 
 type AuthContextValue = {
   session: Session | null;

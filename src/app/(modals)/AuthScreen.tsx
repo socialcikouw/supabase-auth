@@ -1,9 +1,9 @@
 import { useAuthNavigation } from "@/src/lib/hooks/auth/useAuthNavigation";
 import React from "react";
-import { LoginScreen } from "./LoginScreen";
-import { RegisterScreen } from "./RegisterScreen";
+import LoginScreen from "./LoginScreen";
+import RegisterScreen from "./RegisterScreen";
 
-export const AuthScreen: React.FC = () => {
+export default function AuthScreen() {
   const { isLogin, switchToLogin, switchToRegister } = useAuthNavigation();
 
   return isLogin ? (
@@ -11,4 +11,4 @@ export const AuthScreen: React.FC = () => {
   ) : (
     <RegisterScreen onSwitchToLogin={switchToLogin} />
   );
-};
+}

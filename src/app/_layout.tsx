@@ -1,8 +1,8 @@
-import { AuthScreen } from "@/src/components/auth/AuthScreen";
 import { AuthProvider, useAuth } from "@/src/lib/contexts/auth/AuthContext";
 import { Stack } from "expo-router";
 import React from "react";
 import { ActivityIndicator, StyleSheet, View } from "react-native";
+import AuthScreen from "./(modals)/AuthScreen";
 
 function AppContent() {
   const { session, initializing } = useAuth();

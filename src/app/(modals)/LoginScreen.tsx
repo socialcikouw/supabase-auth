@@ -13,9 +13,7 @@ import {
   View,
 } from "react-native";
 
-export const LoginScreen: React.FC<LoginScreenProps> = ({
-  onSwitchToRegister,
-}) => {
+export default function LoginScreen({ onSwitchToRegister }: LoginScreenProps) {
   const { formData, loading, handleLogin, updateField } =
     useLoginForm(onSwitchToRegister);
 
@@ -86,4 +84,4 @@ export const LoginScreen: React.FC<LoginScreenProps> = ({
       </View>
     </KeyboardAvoidingView>
   );
-};
+}

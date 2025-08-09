@@ -1,4 +1,4 @@
-import { AUTH_MESSAGES } from "@/src/lib/constants/auth/authMessages";
+import { AUTH_MESSAGES } from "../../constants/auth/authMessages";
 import type { AuthFormData } from "../../types/auth/auth";
 
 type ValidationResult = { isValid: boolean; message?: string };
