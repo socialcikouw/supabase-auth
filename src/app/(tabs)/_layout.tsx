@@ -14,6 +14,7 @@ export default function TabsLayout() {
       screenOptions={{
         tabBarActiveTintColor: "#2196F3",
         tabBarInactiveTintColor: "#000",
+        headerShown: true,
         headerStyle: {
           backgroundColor: "#fff",
           borderBottomWidth: 1,
@@ -43,8 +44,9 @@ export default function TabsLayout() {
       <Tabs.Screen
         name="index"
         options={{
-          title: "NaelCapital",
+          title: "Nasabah",
           headerTitle: "Supabase-Auth",
+          headerShown: false,
           headerTitleStyle: {
             fontSize: 22,
             fontWeight: "bold",
@@ -69,10 +71,10 @@ export default function TabsLayout() {
       />
 
       <Tabs.Screen
-        name="SettingScreen"
+        name="TabMenu"
         options={{
-          title: "Setelan",
-          headerTitle: "Setelan",
+          title: "Menu",
+          headerTitle: "Menu Utama",
           headerTitleStyle: {
             fontSize: 22,
             fontWeight: "bold",
@@ -80,7 +82,47 @@ export default function TabsLayout() {
           },
           tabBarIcon: ({ focused, color }) => (
             <Ionicons
-              name={focused ? "settings" : "settings-outline"}
+              name={focused ? "menu" : "menu-outline"}
+              color={color}
+              size={sizeIcon}
+            />
+          ),
+        }}
+      />
+
+      <Tabs.Screen
+        name="TabTambah"
+        options={{
+          title: "Tambah",
+          headerTitle: "Tambah",
+          headerTitleStyle: {
+            fontSize: 22,
+            fontWeight: "bold",
+            color: "#2196F3",
+          },
+          tabBarIcon: ({ focused, color }) => (
+            <Ionicons
+              name={focused ? "add-circle" : "add-circle-outline"}
+              color={color}
+              size={30}
+            />
+          ),
+        }}
+      />
+
+      <Tabs.Screen
+        name="TabStories"
+        options={{
+          title: "Stories",
+          headerTitle: "Stories",
+          headerTitleStyle: {
+            fontSize: 22,
+            fontWeight: "bold",
+            color: "#2196F3",
+          },
+          tabBarIcon: ({ focused, color }) => (
+            <Ionicons
+              name={focused ? "time" : "time-outline"}
               color={color}
               size={sizeIcon}
             />

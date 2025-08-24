@@ -1,4 +1,4 @@
-import { supabase } from "@/src/lib/services/supabase";
+import { supabase } from "@/src/lib/services/database/supabase";
 import type { Session, User } from "@supabase/supabase-js";
 import React, {
   createContext,

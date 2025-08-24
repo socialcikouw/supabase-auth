@@ -1,3 +1,20 @@
+## Konfigurasi Environment
+
+Buat file `.env` di root proyek berisi:
+
+```
+EXPO_PUBLIC_SUPABASE_URL=isi_dengan_url_proyek_supabase
+EXPO_PUBLIC_SUPABASE_KEY=isi_dengan_anon_key_supabase
+```
+
+Setelah mengubah `.env`, restart dev server:
+
+```
+npx expo start -c
+```
+
+Pastikan perangkat/emulator memiliki koneksi internet. Error `Network request failed` sering terjadi jika variabel environment tidak ter-set atau perangkat offline.
+
 # Welcome to your Expo app 👋
 
 This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).

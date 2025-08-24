@@ -1,17 +1,19 @@
-import { useAuth } from "@/src/lib/contexts/auth/AuthContext";
-import { Text, View } from "react-native";
+import NasabahList from "@/src/components/cards/NasabahList";
+import HeaderDashboard from "@/src/components/shared/HeaderDashboard";
+import React from "react";
+import { SafeAreaView, StyleSheet } from "react-native";
 
-export default function Index() {
-  const { user } = useAuth();
+export default function index() {
   return (
-    <View
-      style={{
-        flex: 1,
-        justifyContent: "center",
-        alignItems: "center",
-      }}
-    >
-      <Text>Selamat Bergabung {user?.user_metadata.display_name}</Text>
-    </View>
+    <SafeAreaView style={styles.container}>
+      <HeaderDashboard />
+      <NasabahList />
+    </SafeAreaView>
   );
 }
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+  },
+});

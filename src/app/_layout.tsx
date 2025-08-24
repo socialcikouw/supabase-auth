@@ -1,7 +1,10 @@
 import { AuthProvider, useAuth } from "@/src/lib/contexts/auth/AuthContext";
 import { Stack } from "expo-router";
+import { StatusBar } from "expo-status-bar";
 import React from "react";
-import { ActivityIndicator, StyleSheet, View } from "react-native";
+import { ActivityIndicator, View } from "react-native";
+import { commonStyles } from "../lib/styles/common";
+import { theme } from "../lib/styles/theme";
 import AuthScreen from "./(modals)/AuthScreen";
 
 function AppContent() {
@@ -9,8 +12,8 @@ function AppContent() {
 
   if (initializing) {
     return (
-      <View style={styles.loadingContainer}>
-        <ActivityIndicator size="large" color="#007AFF" />
+      <View style={commonStyles.loadingContainer}>
+        <ActivityIndicator size="large" color={theme.colors.primary} />
       </View>
     );
   }
@@ -22,10 +25,7 @@ function AppContent() {
   return (
     <Stack>
       <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
-      <Stack.Screen
-        name="(modals)"
-        options={{ headerShown: false, presentation: "modal" }}
-      />
+      <Stack.Screen name="(modals)" options={{ headerShown: true }} />
     </Stack>
   );
 }
@@ -33,16 +33,8 @@ function AppContent() {
 export default function RootLayout() {
   return (
     <AuthProvider>
+      <StatusBar style="dark" />
       <AppContent />
     </AuthProvider>
   );
 }
-
-const styles = StyleSheet.create({
-  loadingContainer: {
-    flex: 1,
-    justifyContent: "center",
-    alignItems: "center",
-    // backgroundColor: "#f5f5f5",
-  },
-});
